@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Dl-Protect automate
-// @namespace    https://dl-protect.net
+// @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Automate captcha
 // @author       Toka
-// @match        https://dl-protect.net/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=dl-protect.net
+// @match        *dl-protect.net/?*
+// @icon         https://www.google.com/s2/favicons?domain=dl-protect.net
+// @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
@@ -33,18 +34,21 @@ function asyncElementProp(el, prop) {
     })
 }
 
-(function() {
+(function () {
     'use strict';
+    const originalTitle = document.title;
+    document.title = "⏳️" + originalTitle
     asyncGetElementById('subButton')
         .then(el => asyncElementProp(el, 'disabled'))
         .then(el => {
-            console.log('AAAAAAAAAAA', new Date().toISOString());
+            document.title = "✔️" + originalTitle
             el.click();
+        })
 
-            asyncGetElementById('protected-container')
-                .then(el => asyncElementProp(el, 'href'))
-                .then(el => {
-                    window.location.href = el.querySelector('div > div > ul > li > a').href
-            })
-    })
+    asyncGetElementById('protected-container')
+        .then(el => asyncElementProp(el, 'href'))
+        .then(el => {
+            document.title = "✔️" + originalTitle
+            window.location.href = el.querySelector('div > div > ul > li > a').href
+        })
 })();

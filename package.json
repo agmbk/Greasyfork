@@ -1,7 +1,6 @@
 {
-  "name": "Greasyfork",
+  "name": "greasyfork",
   "version": "1.0.0",
   "dependencies": {
-    
   }
 }
