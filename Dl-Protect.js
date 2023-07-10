@@ -34,10 +34,15 @@ function asyncElementProp(el, prop) {
 	});
 }
 
-(function() {
+function sleep(ms) {
+	return new Promise(res => setTimeout(res, ms));
+}
+
+(async function() {
 	'use strict';
 	const originalTitle = document.title;
 	document.title = '⏳️' + originalTitle;
+	await sleep(1000);
 	asyncGetElementById('subButton')
 		.then(el => asyncElementProp(el, 'disabled'))
 		.then(el => {
