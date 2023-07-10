@@ -4,11 +4,8 @@
 // @version      0.1
 // @description  Zone telechargement fix
 // @author       Toka
-// @match        *.zone-telechargement.?*/*
-// @match        *.zone-telechargement.?*/?*
-// @match        *.zone-telechargement.bond/**
-// @match        *.zone-telechargement.tech/**
-// @icon         https://www.google.com/s2/favicons?sz=64domain=zone-telechargement.tech
+// @match        *://www.zone-telechargement.bet/*
+// @icon         https://www.google.com/s2/favicons?sz=64domain=zone-telechargement.bet
 // @run-at        document-start
 // @grant        none
 // ==/UserScript==

@@ -4,8 +4,8 @@
 // @version      0.1
 // @description  Automate captcha
 // @author       Toka
-// @match        *dl-protect.net/?*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=dl-protect.net
+// @match        *://dl-protect.link/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=dl-protect.link
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
