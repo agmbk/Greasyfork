@@ -42,8 +42,10 @@ function sleep(ms) {
 	'use strict';
 	const originalTitle = document.title;
 	document.title = '⏳️' + originalTitle;
-	await sleep(1000);
+
 	asyncGetElementById('subButton')
+		.then(() => sleep(3000))
+		.then(() => asyncGetElementById('subButton'))
 		.then(el => asyncElementProp(el, 'disabled'))
 		.then(el => {
 			document.title = '✔️' + originalTitle;
